@@ -11,6 +11,7 @@ GG
 
 
 classDiagram
+
     Material : -String title
     Material : -double rating
     Material : -bool isBorrowed
