@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 public abstract class Materials 
 { 
-    private string Title {public get;public set; }
-    private double Rating {public get;public set; }
-    private bool IsBorrowed {public get;public set; }
+    public string Title { get; set; }
+    public double Rating { get; set; }
+    public bool IsBorrowed { get; set; }
 
     public Materials (string Title, double Rating, bool IsBorrowed)
     {

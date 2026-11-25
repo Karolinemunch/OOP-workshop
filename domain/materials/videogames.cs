@@ -1,12 +1,12 @@
 namespace Domain;
-class Videogames : Material
+class Videogames : Materials
 {
-    private string Publisher {public get;public set; } = "";
-    private string Genre {public get;public set; } = "";
-    private int ReleaseYear {public get;public set; }
-    private string SupportedPlatforms {public get;public set; } = "";
+    private string Publisher { get; set; } = "";
+    private string Genre { get; set; } = "";
+    private int ReleaseYear { get; set; }
+    private string SupportedPlatforms { get; set; } = "";
 
-    public Videogames(string Publisher, string Genre, int ReleaseYear, string SupportedPlatforms, string Title, double Rating, bool IsBorrowed)
+    public Videogames(string Publisher, string Genre, int ReleaseYear, string SupportedPlatforms, string Title, double Rating, bool IsBorrowed) : base (Title, Rating, IsBorrowed)
     {
         this.Publisher = Publisher;
         this.Genre = Genre;
