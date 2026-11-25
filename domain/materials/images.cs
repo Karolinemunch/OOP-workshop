@@ -1,7 +1,7 @@
 public class Images : Materials
 {
-    public string Resolution { get; set; }
-    public string FileFormat { get; set; }
+    public string Resolution { get; set; } = "";
+    public string FileFormat { get; set; } = "";
     public string FileSize { get; set; }
     public int DateTaken { get; set; }
 
