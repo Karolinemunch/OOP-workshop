@@ -1,4 +1,4 @@
-public class Images
+public class Images : Materials
 {
     public string Resolution { get; set; }
     public string FileFormat { get; set; }

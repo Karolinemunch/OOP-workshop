@@ -1,4 +1,4 @@
-public class E_Book
+public class E_Book : Materials
 {
     public string Language { get; set; }
     public string Author { get; set; }
