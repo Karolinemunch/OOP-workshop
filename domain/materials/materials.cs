@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 public abstract class Materials 
 { 
     private string Title {public get;public set; }
