@@ -6,7 +6,7 @@ class Movies : Materials
     public string Language { get; set; } = "";
     public string Duration { get; set; } = "";
 
-    public void Movie( string director, string gerne, int release_year, string language, string duration)
+    public Movies( string director, string gerne, int release_year, string language, string duration)
     {
         this.Language = language;
         this.Director = director;
