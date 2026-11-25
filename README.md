@@ -9,7 +9,7 @@ GG
 
 //UML-diagrammer
 
-´´´mermaid
+```mermaid
 classDiagram
     class Material{
     -String title
@@ -114,4 +114,4 @@ classDiagram
       +BorrowedCheck()
       +ViewLibrary()
     }
-´´´
+```
