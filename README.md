@@ -11,6 +11,12 @@ GG
 
 
 classDiagram
+    Material : -String title
+    Material : -double rating
+    Material : -bool isBorrowed
+    Material: +Download()
+    Material: +ShowInfo()
+    
     Material <|-- E-book
     E-book : -String author
     E-book : -String language
@@ -58,11 +64,7 @@ classDiagram
     Videogame : -int releaseYear
     Videogame : -String supportedPlatforms
 
-    Material : -String title
-    Material : -double rating
-    Material : -bool IsBorrowed
-    Material: +Download()
-    Material: +ShowInfo()
+
 
     class Viewable <<Interface>>
     Viewable <|-- E-book
@@ -87,7 +89,8 @@ classDiagram
     User: Download()
 
     User <|-- Borrower
-    
+    Borrower : -List~Material~ Borrowed
+
     User <|-- Employee 
     Employee: AddMaterial()
     Employee: RemoveMaterial()
@@ -99,9 +102,6 @@ classDiagram
     Admin: ChangeName()
     Admin: ChangeAge()
     Admin: RemoveReview()
-
-
-    Borrower : -List~Material~ Borrowed
 
     class Library 
     Library : -list~Material~ library
