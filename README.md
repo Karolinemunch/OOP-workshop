@@ -11,101 +11,106 @@ GG
 
 
 classDiagram
-
-    Material : -String title
-    Material : -double rating
-    Material : -bool isBorrowed
-    Material: +Download()
-    Material: +ShowInfo()
-    
-    Material <|-- E-book
-    E-book : -String author
-    E-book : -String language
-    E-book : -int numberOfPages
-    E-book : -int yearOfPublication
-    E-book : -String ISBN
-
-    Material <|-- Movie
-    Movie : -String director
-    Movie : -String genre
-    Movie : -int releaseYear
-    Movie : -String language
-    Movie : -String duration
-
-    Material <|-- Image
-    Image : -String resolution
-    Image : -String fileFormat
-    Image : -String fileSize
-    Image : -String dateTaken
-
-    Material <|-- Song
-    Song : -String composer
-    Song : -String singer
-    Song : -String genre
-    Song : -String fileType
-    Song : -String duration
-    Song : -String language
-
-    Material <|-- App
-    App : -String version
-    App : -String publisher
-    App : -String supportedPlatforms
-    App : -String fileSize
-
-    Material <|-- Podcast
-    Podcast : -int releaseYear
-    Podcast : -String hosts
-    Podcast : -String guests
-    Podcast : -int episodeNumber
-    Podcast : -String language
-
-    Material <|-- Videogame
-    Videogame : -String genre
-    Videogame : -String publisher
-    Videogame : -int releaseYear
-    Videogame : -String supportedPlatforms
-
-
-
-    class Viewable <<Interface>>
-    Viewable <|-- E-book
-    Viewable <|-- Image
+    class Material{
+    -String title
+    -double rating
+    -bool isBorrowed
+    +Download()
+    +ShowInfo()
+    }
+    class Viewable <<Interface>>{
     Viewable : +View()
-    
-    class Playable <<Interface>>
-    Playable <|-- Videogame
-    Playable <|-- Song
+    }
+    class Playable <<Interface>>{
+    +Play()
+    }
+    Viewable <|-- E-book
+    Material <|-- E-book
+    class E-book{
+    -String author
+    -String language
+    -int numberOfPages
+    -int yearOfPublication
+    -String ISBN
+    }
     Playable <|-- Movie
+    Material <|-- Movie
+    class Movie{
+    -String director
+    -String genre
+    -int releaseYear
+    -String language
+    -String duration
+    }
+    Viewable <|-- Image
+    Material <|-- Image
+    class Image{
+    -String resolution
+    -String fileFormat
+    -String fileSize
+    -String dateTaken
+    }
+    Playable <|-- Song
+    Material <|-- Song
+    class Song{
+    -String composer
+    -String singer
+    -String genre
+    -String fileType
+    -String duration
+    -String language
+    }
+    Playable <|-- App
+    Material <|-- App
+    class App{
+    -String version
+    -String publisher
+    -String supportedPlatforms
+    -String fileSize
+    }
     Playable <|-- Podcast
-    Playable <|-- Play
-    Playable : +Play()
-
-    class User <<Abstract>>
-    User : -String name
-    User : -String CPR
-    User : -int age
-    User : -list~Material~ borrowHistory
-    User : -list~Material~ currentlyBorrowed
-    User: Review()
-    User: Download()
-
+    Material <|-- Podcast
+    class Podcast{
+    -int releaseYear
+    -String hosts
+    -String guests
+    -int episodeNumber
+    -String language
+    }
+    Playable <|-- Videogame
+    Material <|-- Videogame
+    class Videogame{
+    -String genre
+    -String publisher
+    -int releaseYear
+    -String supportedPlatforms
+    }
+    class User <<Abstract>>{
+    -String name
+    -String CPR
+    -int age
+    -list~Material~ borrowHistory
+    -list~Material~ currentlyBorrowed
+    +Review()
+    +Download()
+    }
     User <|-- Borrower
     Borrower : -List~Material~ Borrowed
-
-    User <|-- Employee 
-    Employee: AddMaterial()
-    Employee: RemoveMaterial()
-
-    
+    User <|-- Employee
+    class Employee{
+    +AddMaterial()
+    +RemoveMaterial()
+    }
     Employee <|-- Admin
-    Admin: ChangeRole()
-    Admin: ChangeCPR()
-    Admin: ChangeName()
-    Admin: ChangeAge()
-    Admin: RemoveReview()
-
-    class Library 
-    Library : -list~Material~ library
-
-    Library: +BorrowedCheck()
-    Library: +ViewLibrary()
+    class Admin{
+    +ChangeRole()
+    +ChangeCPR()
+    +ChangeName()
+    +ChangeAge()
+    +RemoveReview()
+    }
+    class Library{ 
+      -list~Material~ library
+      +BorrowedCheck()
+      +ViewLibrary()
+    }
