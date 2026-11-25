@@ -1,5 +1,7 @@
 public class E_Book : Materials
 {
+    private string language;
+
     public string Language { get; set; }
     public string Author { get; set; }
     public int Number_Of_Pages { get; set; }
