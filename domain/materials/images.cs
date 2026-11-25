@@ -7,7 +7,7 @@ public class Images : Materials
 
     public void Image (string title, string resolution, int fileSize, int dateTaken)
     {
-        this.Title = title;
+        this.Titel = title;
         this.Resolution = resolution;
         this.FileSize = fileSize;
         this.DateTaken = dateTaken;

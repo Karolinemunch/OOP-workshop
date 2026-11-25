@@ -1,5 +1,5 @@
 public class Materials {
 
-    public string Title { get; set; } = "";
+    public string Titel { get; set; } = "";
 
 }
