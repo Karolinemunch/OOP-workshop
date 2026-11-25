@@ -5,7 +5,7 @@ public class Images : Materials
     public int FileSize { get; set; }
     public int DateTaken { get; set; }
 
-    public E_Book(string title, string resolution, int fileSize, int dateTaken)
+    public void Image (string title, string resolution, int fileSize, int dateTaken)
     {
         this.Title = title;
         this.Resolution = resolution;
