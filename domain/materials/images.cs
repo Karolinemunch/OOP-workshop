@@ -2,13 +2,14 @@ public class Images : Materials
 {
     public string Resolution { get; set; }
     public string FileFormat { get; set; }
-    public int FileSize { get; set; }
+    public string FileSize { get; set; }
     public int DateTaken { get; set; }
 
-    public void Image (string title, string resolution, int fileSize, int dateTaken)
+    public Images(string title, string resolution, string fileFormat, string fileSize, int dateTaken)
     {
         this.Title = title;
         this.Resolution = resolution;
+        this.FileFormat = fileFormat;
         this.FileSize = fileSize;
         this.DateTaken = dateTaken;
     }
