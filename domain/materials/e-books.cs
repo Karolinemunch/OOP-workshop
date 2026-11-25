@@ -5,10 +5,10 @@ public class E_Book : Materials
     public int Number_Of_Pages { get; set; }
     public int Year_Of_Publication_And_ISBN { get; set; }
 
-    public E_Book(string language, string author, int number_of_pages, int year_of_publication_and_ISBN, string title, double rating, bool isborrowed)
+    public E_Book(string language, string author, int number_of_pages, int year_of_publication_and_ISBN, string title /*, double rating, bool isborrowed */)
     {
-        this.IsBorrowed = isborrowed;
-        this.Rating = rating;
+        // this.IsBorrowed = isborrowed;
+        // this.Rating = rating;
         this.Title = title;
         this.Language = language;
         this.Author = author;
